@@ -2,7 +2,6 @@
 
 <html lang="en">
   <head>
-    <script type = "text/javascript" src="radius.js"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -20,6 +19,7 @@
             <img src = "chewy.svg.jpg" alt = "Chewy" height="80"/>
             <h1>Vet Finder</h1>
         </header>
+        <!--
             <fieldset>
                 <legend>Filters:</legend>
                     <div>
@@ -106,21 +106,22 @@
                 </div>
 
         </fieldset>
-
+      -->
+      
         <div class="main">
             <form>
                 <label for="zipcode-input"></label>
-                <input type="number" id="zipcode-input" name="zipcode-input" placeholder="Search By Zip Code">
-                <input type="button" value="Search" onclick="getZip()" />
-                <input type = "button" onclick="getRadius()" value = "Zipcode" />
+                <input type="number" id="zip-input" name="zipcode-input" placeholder="Search By Zip Code">
+                <button type="button" id="zip-button">Search</button>
             </form>
+
             <select name="miles" id="miles">
                 <option value="5 miles">5 miles</option>
                 <option value="10 miles">10 miles</option>
                 <option value="15 miles">15 miles</option>
                 <option value="20 miles">20 miles</option>
             </select>
-
+        
             <div class="map-output">
                 <div class="map-left">
                     <h2>Map</h2>
@@ -135,7 +136,9 @@
                     </script>
                 </div>
                 <div class="map-right"> 
-                  <div>Search Results: <p id="zip-received"></p> </div>
+                  <div class="search-output">
+                    <div>Search Results:</div>
+                    <div id="zip-received"></div> </div>
                       <ol> 
                         <li>
                           <h3 id="clinic1"></h3>
