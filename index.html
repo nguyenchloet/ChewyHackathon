@@ -16,12 +16,12 @@
             <h1>Vet Finder</h1>
         </header>
         <div class="main">
-            <form action="/action_page.php">
-                <label for="zipcode_input">Search by zipcode:</label>
-                <input type="number" id="zipcode_input" name="zipcode_input"><br><br>
+            <form action="/action-page.php">
+                <label for="zipcode-input">Search by zipcode:</label>
+                <input type="number" id="zipcode-input" name="zipcode-input"><br><br>
             </form>
-            <div class="map_output">
-                <div>
+            <div class="map-output">
+                <div class="map-left">
                     <h2>Map</h2>
                     <!-- map image output -->
                     <div id="map"></div>
@@ -33,8 +33,10 @@
                       });
                     </script>
                 </div>
-                <div>Filters</div>
-                <div>Search Results</div>
+                <div class="map-right"> 
+                  <div>Filters</div>
+                  <div>Search Results</div>
+                </div>
             </div>
         </div>
     </body>

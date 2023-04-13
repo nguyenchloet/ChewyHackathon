@@ -8,8 +8,12 @@ h1 {
     color: #fff;
 }
 
-.map_output {
+.map-output {
+    display: flex;
+    flex-direction: row;
     border: 1px solid #000;
+    width: 100%;
+    height: 75vh;
 }
 
 /* 
