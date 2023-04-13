@@ -37,7 +37,7 @@ header {
     width: 400px;
  }
 
- .header img{
+ .header img {
     display: flex;
     margin: 0 auto;
     width: 75px;
@@ -48,5 +48,4 @@ header {
     display: inline;
     text-align: center;
     width: 70%
- }
-
+}
