@@ -3,11 +3,7 @@
 }
 
 h1 {
-    /*background-color: #1942ae;*/
-    /*width: 100%;*/
     color: white;
-    /*align-items: center;*/
-    /*justify-content: center;*/
     align-self: center;
 }
 
@@ -20,7 +16,6 @@ header {
     display: flex;
     background-color: #1942ae;
     width: 100%;
-    /*text-align: center;*/
 }
 
 .map-output {
@@ -42,10 +37,16 @@ header {
     width: 400px;
  }
 
-
-<<<<<<< HEAD
-=======
- .body{
-    font-family: 'Chewy', monospace ;
+ .header img{
+    display: flex;
+    margin: 0 auto;
+    width: 75px;
+    height: 75px;
  }
->>>>>>> 2285e51dd061ab67010bba12c5135054c82d8b78
+
+ h1{
+    display: inline;
+    text-align: center;
+    width: 70%
+ }
+
