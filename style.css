@@ -22,7 +22,7 @@ h1 {
  * that contains the map. 
  */
  #map {
-    background-color: blue;
+    /* background-color: blue; */
     height: 400px;
     width: 400px;
 }
