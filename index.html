@@ -2,7 +2,6 @@
 
 <html lang="en">
   <head>
-    <script type = "text/javascript" src="radius.js"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -110,15 +109,16 @@
                     <label for="radiology">Radiology</label>
                 </div>
         </fieldset>
--->
+      -->
         <div class="main">
-
             <div class="map-output">
                 <div class="map-left">
                     <form>
                         <label for="zipcode-input"></label>
-                        <input type="text" id="zipcode-input" name="zipcode-input" placeholder="Search By Zip Code">
-                        <input type="button" id="search-image" value="&#x1F50E" onclick="getZip()" />
+                        <input type="number" id="zip-input" name="zipcode-input" placeholder="Search By Zip Code">
+                        
+                        <button type="button" id="zip-button">&#x1F50E</button>
+                        
                         <input type="button" id="filter" value="Filter" />
                        <!-- <input type = "button" onclick="getRadius()" value = "Zipcode" /> -->
                     </form>
@@ -128,6 +128,7 @@
                         <option value="15 miles">15 miles</option>
                         <option value="20 miles">20 miles</option>
                     </select>
+                </div>
                 <div class="map-right">
                     <!--<h2>Map</h2> -->
                     <!-- map image output -->
@@ -142,7 +143,9 @@
                 </div>
 
                 <div class="map-right"> 
-                  <div>Search Results: <p id="zip-received"></p> </div>
+                  <div class="search-output">
+                    <div>Search Results:</div>
+                    <div id="zip-received"></div> </div>
                       <ol> 
                         <li>
                           <h3 id="clinic1"></h3>
