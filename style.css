@@ -2,3 +2,11 @@ header {
     background-color: #1942ae;
     width: 100%;
 }
+
+h1 {
+    color: #fff;
+}
+
+.map_output {
+    border: 1px solid #000;
+}
