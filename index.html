@@ -20,7 +20,6 @@
             <img src = "chewy.svg.jpg" alt = "Chewy" height="80"/>
             <h1>Vet Finder</h1>
         </header>
-<<<<<<< Updated upstream
             <fieldset>
                 <legend>Filters:</legend>
                     <div>
@@ -108,16 +107,19 @@
 
         </fieldset>
 
-
-=======
->>>>>>> Stashed changes
         <div class="main">
             <form>
-
                 <label for="zipcode-input"></label>
                 <input type="number" id="zipcode-input" name="zipcode-input" placeholder="Search By Zip Code">
                 <input type="button" value="Search" onclick="getZip()" />
+                <button id="zipcode">zipcode</button>
             </form>
+            <select name="miles" id="miles">
+                <option value="5 miles">5 miles</option>
+                <option value="10 miles">10 miles</option>
+                <option value="15 miles">15 miles</option>
+                <option value="20 miles">20 miles</option>
+            </select>
 
             <div class="map-output">
                 <div class="map-left">
