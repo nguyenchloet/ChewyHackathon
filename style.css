@@ -16,5 +16,6 @@ h1 {
  * that contains the map. 
  */
  #map {
-    height: 100%;
+    background-color: blue;
+    height: 200px;
 }
