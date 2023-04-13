@@ -1,9 +1,8 @@
 
 h1 {
-    background-color: #314cbf;
+    background-color: #1942ae;
     /*width: 100%;*/
     color: white;
-    text-align: center;
 }
 
 fieldset {
@@ -11,10 +10,9 @@ fieldset {
     float: right;
 }
 
-
 header {
-    /*display: flex;*/
-    background-color: #314cbf;
+    display: flex;
+    background-color: #1942ae;
     width: 100%;
 }
 
@@ -42,6 +40,10 @@ h1 {
 
  }
 
- .html{
-    font-family:'Chewy', monospace
+ *{
+    font-family: 'Chewy', monospace ;
+ } 
+
+ .body{
+    font-family: 'Chewy', monospace ;
  }
