@@ -1,4 +1,6 @@
 let map;
+let marker;
+let geocoder;
 
 async function initMap() {
   //@ts-ignore
@@ -10,13 +12,7 @@ async function initMap() {
   });
 }
 
-initMap();
-/*
-fetch('./clinic-info.json')
-  .then(response => response.json())
-  .then(data => console.log(data))
-  .catch(error => console.log(error));
-*/
+window.initMap = initMap();
 
 /* get data from JSON file */
 $(document).ready(function() {
@@ -28,14 +24,19 @@ $(document).ready(function() {
           //console.log(value.zip);
       });
   });
+
   /* get user input zip code */
-  $(document).ready(function(){
-    // Get value on button click and show alert
-    $("#zip-button").click(function(){
-        var zip = $("#zip-input").val();
-        console.log(zip);
-    });
+  let zipOutput = document.getElementById('zip-received');
+  var zip;
+  $("#zip-button").click(function(){
+      zip = $("#zip-input").val();
+      zipOutput.innerHTML = zip;
+      console.log(zip);
   });
+  
+
+  // sort zip by distance from input zip
+  // get closest zip = closestZip
+  
 });
             
-
