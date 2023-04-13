@@ -1,8 +1,9 @@
 
 h1 {
-    background-color: #1942ae;
+    background-color: #314cbf;
     /*width: 100%;*/
     color: white;
+    text-align: center;
 }
 
 fieldset {
@@ -10,9 +11,10 @@ fieldset {
     float: right;
 }
 
+
 header {
-    display: flex;
-    background-color: #1942ae;
+    /*display: flex;*/
+    background-color: #314cbf;
     width: 100%;
 }
 
