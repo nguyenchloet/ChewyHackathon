@@ -11,10 +11,21 @@ async function initMap() {
 }
 
 initMap();
-
+/*
 fetch('./clinic-info.json')
   .then(response => response.json())
   .then(data => console.log(data))
   .catch(error => console.log(error));
+*/
 
-
+$(document).ready(function() {
+  $.getJSON('clinic-info.json', function(data) {
+      //console.log(data);
+      $.each(data, function(key, value) { 
+          //console.log(key, value);
+          console.log(value.clinic_name);
+          console.log(value.zip);
+      });
+  });
+});
+            
