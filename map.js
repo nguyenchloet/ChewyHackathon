@@ -56,7 +56,6 @@ async function initMap() {
   clear();
 }
 
-
 function clear() {
   marker.setMap(null);
   responseDiv.style.display = "none";

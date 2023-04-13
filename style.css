@@ -33,7 +33,7 @@ header {
  #map {
      padding: 25%;
      float: right;
-     margin-top: -70px;
+     margin-top: -20px;
      height:100%;
      width:auto;
  }
@@ -51,14 +51,14 @@ header {
     width: 70%;
  }
 
-#zipcode-input {
-     width: 40%;
+#zip-input {
+     width: 25%;
      height: 25px;
      padding: 10px;
      margin: 1px;
  }
 
-#search-image {
+#zip-button {
     width: 45px;
     height: 47px;
     margin-left: 10px;
