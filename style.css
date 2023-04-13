@@ -1,8 +1,14 @@
+*{
+    font-family: 'Chewy', monospace ;
+}
 
 h1 {
-    background-color: #1942ae;
+    /*background-color: #1942ae;*/
     /*width: 100%;*/
     color: white;
+    /*align-items: center;*/
+    /*justify-content: center;*/
+    align-self: center;
 }
 
 fieldset {
@@ -14,10 +20,7 @@ header {
     display: flex;
     background-color: #1942ae;
     width: 100%;
-}
-
-h1 {
-    color: #fff;
+    /*text-align: center;*/
 }
 
 .map-output {
@@ -40,10 +43,4 @@ h1 {
 
  }
 
- *{
-    font-family: 'Chewy', monospace ;
- } 
 
- .body{
-    font-family: 'Chewy', monospace ;
- }
