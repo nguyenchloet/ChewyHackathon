@@ -5,6 +5,13 @@
     "version": "0.2.0",
     "configurations": [
         {
+            "type": "java",
+            "name": "Zipcode",
+            "request": "launch",
+            "mainClass": "Zipcode",
+            "projectName": "ChewyHackathon_57a3332b"
+        },
+        {
             "type": "chrome",
             "request": "launch",
             "name": "Launch Chrome against localhost",
