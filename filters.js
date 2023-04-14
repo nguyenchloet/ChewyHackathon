@@ -1,13 +1,13 @@
 fetch('clinic-info.json')
   .then(response => response.json())
   .then(clinics => {
-    // Loop through each clinic object
+    // loop through each clinic object (loop only through specified radius)
     clinics.forEach(clinic => {
-      // Check if the clinic matches the selected filters
+      // check if the clinic matches the selected filters
       if (clinic.insuranceChecked) {
 
       }
-      
+      // check for all filters
     else if (clinic.practiceHub) {
         // Display the clinic in the HTML
         const clinicHTML = `<div>${clinic.clinic_name} - ${clinic.address1}, ${clinic.city}, ${clinic.state} ${clinic.zip}</div>`;
@@ -17,8 +17,7 @@ fetch('clinic-info.json')
   });
 
 
-
-// Get references to the checkboxes
+// get references to the checkboxes
 var insuranceCheckbox = document.getElementById("insurance");
 var practicehubCheckbox = document.getElementById("practicehub");
 var cwavCheckbox = document.getElementById("cwav");
@@ -39,29 +38,29 @@ var neurologyCheckbox = document.getElementById("neurology");
 var dermatologyCheckbox = document.getElementById("dermatology");
 var radiologyCheckbox = document.getElementById("radiology");
 
-// Add event listeners to the checkboxes
-insuranceCheckbox.addEventListener("change", updateContent);
-practicehubCheckbox.addEventListener("change", updateContent);
-cwavCheckbox.addEventListener("change", updateContent);
-emergencyCheckbox.addEventListener("change", updateContent);
-beefCattleCheckbox.addEventListener("change", updateContent);
-foodAnimalCheckbox.addEventListener("change", updateContent);
-dairyCheckbox.addEventListener("change", updateContent);
-avianCheckbox.addEventListener("change", updateContent);
-exoticCheckbox.addEventListener("change", updateContent);
-reptileCheckbox.addEventListener("change", updateContent);
-equineCheckbox.addEventListener("change", updateContent);
-swineCheckbox.addEventListener("change", updateContent);
-canineCheckbox.addEventListener("change", updateContent);
-nutritionCheckbox.addEventListener("change", updateContent);
-oncologyCheckbox.addEventListener("change", updateContent);
-cardiologyCheckbox.addEventListener("change", updateContent);
-neurologyCheckbox.addEventListener("change", updateContent);
-dermatologyCheckbox.addEventListener("change", updateContent);
-radiologyCheckbox.addEventListener("change", updateContent);
+// add event listeners to the checkboxes
+insuranceCheckbox.addEventListener("change", updateClinics);
+practicehubCheckbox.addEventListener("change", updateClinics);
+cwavCheckbox.addEventListener("change", updateClinics);
+emergencyCheckbox.addEventListener("change", updateClinics);
+beefCattleCheckbox.addEventListener("change", updateClinics);
+foodAnimalCheckbox.addEventListener("change", updateClinics);
+dairyCheckbox.addEventListener("change", updateClinics);
+avianCheckbox.addEventListener("change", updateClinics);
+exoticCheckbox.addEventListener("change", updateClinics);
+reptileCheckbox.addEventListener("change", updateClinics);
+equineCheckbox.addEventListener("change", updateClinics);
+swineCheckbox.addEventListener("change", updateClinics);
+canineCheckbox.addEventListener("change", updateClinics);
+nutritionCheckbox.addEventListener("change", updateClinics);
+oncologyCheckbox.addEventListener("change", updateClinics);
+cardiologyCheckbox.addEventListener("change", updateClinics);
+neurologyCheckbox.addEventListener("change", updateClinics);
+dermatologyCheckbox.addEventListener("change", updateClinics);
+radiologyCheckbox.addEventListener("change", updateClinics);
 
 // Function to update the content on the webpage based on the selected filters
-function updateContent() {
+function updateClinics() {
   // Get references to all the checkboxes and their current checked state
   const insuranceChecked = insuranceCheckbox.checked;
   const practicehubChecked = practicehubCheckbox.checked;
@@ -83,13 +82,13 @@ function updateContent() {
   const dermatologyChecked = dermatologyCheckbox.checked;
   const radiologyChecked = radiologyCheckbox.checked;
 
-  // Use the checked state of the checkboxes to filter the content on the webpage
-  // For example:
+  // use the checked state of the checkboxes to filter the content on the webpage
+
   if (insuranceChecked) {
-    // Show content that accepts insurance
+    // show content that accepts insurance
   } else {
-    // Hide content that accepts insurance
+    // hide content that accepts insurance
   }
 
-  // Repeat for all the other checkboxes and their corresponding filters
+  // repeat for all the other checkboxes and their corresponding filters
 }
