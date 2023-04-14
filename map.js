@@ -96,7 +96,9 @@ $(document).ready(function() {
           //console.log(value.zip);
       });
   });
+});
 
+function getZip() {
   /* get user input zip code */
   let zipOutput = document.getElementById('zip-received');
   var zip;
@@ -105,5 +107,5 @@ $(document).ready(function() {
       zipOutput.innerHTML = zip;
       console.log(zip);
   });  
-});
+}
             
