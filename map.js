@@ -5,6 +5,7 @@ let responseDiv;
 let response;
 var lat;
 var long;
+var zipcode;
 
 async function initMap() {
   //@ts-ignore
@@ -71,6 +72,7 @@ function geocode(request) {
       const { results } = result;
 
       map.setCenter(results[0].geometry.location);
+      map.setZoom(11);
       marker.setPosition(results[0].geometry.location);
       marker.setMap(map);
       responseDiv.style.display = "block";
@@ -86,26 +88,46 @@ function geocode(request) {
 
 window.initMap = initMap();
 
-/* get data from JSON file */
 $(document).ready(function() {
+ /* get data from JSON file */
   $.getJSON('clinic-info.json', function(data) {
-      //console.log(data);
-      $.each(data, function(key, value) { 
-          //console.log(key, value);
-          //console.log(value.clinic_name);
-          //console.log(value.zip);
-      });
+    $.each(data, function(key, value) { 
+      //console.log(JSON.stringify(data));
+    });
   });
+  getZip();
 });
 
+/* get user input zip code */
 function getZip() {
-  /* get user input zip code */
   let zipOutput = document.getElementById('zip-received');
-  var zip;
+  let searchResults = document.getElementById("search-output");
+  let zipError = document.getElementById("zip-error");
+
   $("#zip-button").click(function(){
-      zip = $("#zip-input").val();
-      zipOutput.innerHTML = zip;
-      console.log(zip);
+      zipcode = $("#zip-input").val();
+      if (!zipcode == "") {
+        zipOutput.innerHTML = zipcode;  
+        searchResults.style.display = 'block';
+        zipError.style.display = 'none';
+      } else {
+        zipError.style.display = 'block';
+      }
   });  
 }
-            
+
+function showFilters() {
+  let filterOptions = document.getElementById('fieldsets');
+  $("#filter").click(function(){
+    if (filterOptions.style.display == 'none') {
+      filterOptions.style.display = 'block';
+    } else {
+      filterOptions.style.display = 'none';
+    }
+  });   
+  $("#submitFilters").click(function(){
+      filterOptions.style.display = 'none';
+  });   
+}
+
+showFilters();

@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Chewy">
     <link rel="stylesheet" href="style.css">
     <script type="module" src="./map.js"></script>
-    <script type="text/javascript" src="./zip.js"></script>
+    <!-- <script type="text/javascript" src="./zip.js"></script> -->
     <script src="./popup.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
   </head>
@@ -20,7 +20,8 @@
             <img src = "chewy.svg.jpg" alt = "Chewy" height="80"/>
             <h1>Vet Finder</h1>
         </header>
-        <!--
+        <div id="fieldsets">
+          <div id="fieldstyle">
             <fieldset>
                 <legend>Filters:</legend>
                     <div>
@@ -40,9 +41,7 @@
                         <label for="emergency">Emergency Services</label>
                     </div>
             </fieldset>
-        <div class="popup" onclick="myFunction()">Click me!
-            <span class="popuptext" id="myPopup">Popup text...</span>
-        </div>
+   
             <fieldset>
                 <legend>Categories:</legend>
                 <div>
@@ -108,35 +107,123 @@
                     <input type="checkbox" id="radiology">
                     <label for="radiology">Radiology</label>
                 </div>
+              </div>
         </fieldset>
-      -->
+        <button id="submitFilters">Apply filters</button>
+
+       </div>
         <div class="main">
             <div class="map-output">
                 <div class="map-left">
                     <form>
                         <label for="zipcode-input"></label>
-                        <input type="number" id="zip-input" name="zipcode-input" placeholder="Search By Zip Code">
-                        
+                        <input type="number" id="zip-input" name="zipcode-input" placeholder="Search By Zip Code"> 
                         <button type="button" id="zip-button">&#x1F50E</button>
-          
-                        <input type="button" id="filter" value="Filter" />
+                        <button type="button" id="filter" value="Filter">Filter</button>
                        <!-- <input type = "button" onclick="getRadius()" value = "Zipcode" /> -->
                     </form>
-                    <select name="miles" id="miles">
+                    <div id="zip-bar">
+                      <select name="miles" id="miles">
                         <option value="5 miles">5 miles</option>
                         <option value="10 miles">10 miles</option>
                         <option value="15 miles">15 miles</option>
                         <option value="20 miles">20 miles</option>
-                    </select>
+                      </select>
+                      <div id="zip-error">Enter a valid zip code</div>
+                    </div>
                     <br><br>
-                    <div class="search-output">
-                      <div>Search Results:</div>
-                      <div id="zip-received"></div> </div>
-                        <ol> 
-                          <li>
-                            <h3 id="clinic1"></h3>
-                          </li>
-                        </ol>
+                    <div id="search-output">
+                         <div id="h2div">
+                          <h2 id="zip-received"></h2> 
+                          <h2>Search Results:</h2>
+                         </div>
+                      <ul> 
+                        <li>
+                          <div id="clinic-item">
+                            <h3 id="clinic1">Countryside Animal Hospital - Granby</h3>
+                            <p>&emsp; <em>0.2mi</em></p>
+                          </div>
+                          <div>164 W State ST, Granby MA, 01033-9606</div>
+
+                          <div>Categories: Food Animals, Swine</div>
+                          <div id="clinic-subitem">
+                            <p>Insurance: <span>No</span></p>
+                            <p>Specialties: None</p>
+                          </div>
+                        </li>
+
+                        <li>
+                          <div id="clinic-item">
+                            <h3 id="clinic1">Agawam Animal Hospital</h3>
+                            <p>&emsp; <em>0.5mi</em></p>
+                          </div>
+                          <div>65 Mill ST, Agawam MA, 01001-2393</div>
+
+                          <div>Categories: None</div>
+                          <div id="clinic-subitem">
+                            <p>Insurance: <span>Yes</span></p>
+                            <p>Specialties: Nutrition, Oncology</p>
+                          </div>
+                        </li>
+
+                        <li>
+                          <div id="clinic-item">
+                            <h3 id="clinic1">Skipton Vet Clinic</h3>
+                            <p>&emsp; <em>0.9mi</em></p>
+                          </div>
+                          <div>70 SOUTHAMPTON ST, Boston MA, 02118-2711</div>
+
+                          <div>Categories: Food Animals, Swine</div>
+                          <div id="clinic-subitem">
+                            <p>Insurance: <span>No</span></p>
+                            <p>Specialties: Cardiology, Neurology</p>
+                          </div>
+                        </li>
+
+                        <li>
+                          <div id="clinic-item">
+                            <h3 id="clinic1">Countryside Animal Hospital - Granby</h3>
+                            <p>&emsp; <em>1.0mi</em></p>
+                          </div>
+                          <div>164 W State ST,  MA, 01033-9606</div>
+
+                          <div>Categories: Food Animals, Swine</div>
+                          <div id="clinic-subitem">
+                            <p>Insurance: <span>No</span></p>
+                            <p>Specialties: </p>
+                          </div>
+                        </li>
+
+                        <li>
+                          <div id="clinic-item">
+                            <h3 id="clinic1">Countryside Animal Hospital</h3>
+                            <p>&emsp; <em>2.0mi</em></p>
+                          </div>
+                          <div>164 W State ST, Granby MA, 01033-9606</div>
+
+                          <div>Categories: Food Animals, Swine</div>
+                          <div id="clinic-subitem">
+                            <p>Insurance: <span>No</span></p>
+                            <p>Specialties: None</p>
+                          </div>
+                        </li>
+
+                        <li>
+                          <div id="clinic-item">
+                            <h3 id="clinic1">Countryside Animal Hospital - Granby</h3>
+                            <p>&emsp; <em>2.5mi</em></p>
+                          </div>
+                          <div>164 W State ST, Granby MA, 01033-9606</div>
+
+                          <div>Categories: Food Animals, Swine</div>
+                          <div id="clinic-subitem">
+                            <p>Insurance: <span>No</span></p>
+                            <p>Specialties: None</p>
+                          </div>
+                        </li>
+                      </ul>
+                    </div>
+                        
                 </div>
 
                 <div class="map-right">
@@ -158,6 +245,7 @@
             </div>
         </div>
     </body>
+    <footer></footer>
 </html>
 
 <!--   -->
