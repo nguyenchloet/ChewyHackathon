@@ -56,11 +56,13 @@ async function initMap() {
   clear();
 }
 
+/* clear zip input */
 function clear() {
   marker.setMap(null);
   responseDiv.style.display = "none";
 }
 
+/* display input location as map marker */
 function geocode(request) {
   clear();
   geocoder
