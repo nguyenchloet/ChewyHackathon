@@ -33,9 +33,15 @@ header {
  #map {
      padding: 25%;
      float: right;
-     margin-top: -20px;
+     margin-top: -75px;
      height:100%;
      width:auto;
+     margin-right: 20px;
+ }
+
+ .map-left {
+    padding-top: 40px;
+    padding-left: 20px;
  }
 
  .header img {
@@ -73,4 +79,13 @@ header {
 
 #miles {
     margin: 1px;
+}
+
+.search-output {
+    display: flex;
+    flex-direction: row;
+}
+
+.search-output div {
+    padding-left: 10px;
 }
