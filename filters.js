@@ -19,25 +19,25 @@ fetch('clinic-info.json')
 
 
 // Get references to the checkboxes
-const insuranceCheckbox = document.getElementById("insurance");
-const practicehubCheckbox = document.getElementById("practicehub");
-const cwavCheckbox = document.getElementById("cwav");
-const emergencyCheckbox = document.getElementById("emergency");
-const beefCattleCheckbox = document.getElementById("beefcattle");
-const foodAnimalCheckbox = document.getElementById("foodanimal");
-const dairyCheckbox = document.getElementById("dairy");
-const avianCheckbox = document.getElementById("avian");
-const exoticCheckbox = document.getElementById("exotic");
-const reptileCheckbox = document.getElementById("reptile");
-const equineCheckbox = document.getElementById("equine");
-const swineCheckbox = document.getElementById("swine");
-const canineCheckbox = document.getElementById("canine");
-const nutritionCheckbox = document.getElementById("nutrition");
-const oncologyCheckbox = document.getElementById("oncology");
-const cardiologyCheckbox = document.getElementById("cardiology");
-const neurologyCheckbox = document.getElementById("neurology");
-const dermatologyCheckbox = document.getElementById("dermatology");
-const radiologyCheckbox = document.getElementById("radiology");
+var insuranceCheckbox = document.getElementById("insurance");
+var practicehubCheckbox = document.getElementById("practicehub");
+var cwavCheckbox = document.getElementById("cwav");
+var emergencyCheckbox = document.getElementById("emergency");
+var beefCattleCheckbox = document.getElementById("beefcattle");
+var foodAnimalCheckbox = document.getElementById("foodanimal");
+var dairyCheckbox = document.getElementById("dairy");
+var avianCheckbox = document.getElementById("avian");
+var exoticCheckbox = document.getElementById("exotic");
+var reptileCheckbox = document.getElementById("reptile");
+var equineCheckbox = document.getElementById("equine");
+var swineCheckbox = document.getElementById("swine");
+var canineCheckbox = document.getElementById("canine");
+var nutritionCheckbox = document.getElementById("nutrition");
+var oncologyCheckbox = document.getElementById("oncology");
+var cardiologyCheckbox = document.getElementById("cardiology");
+var neurologyCheckbox = document.getElementById("neurology");
+var dermatologyCheckbox = document.getElementById("dermatology");
+var radiologyCheckbox = document.getElementById("radiology");
 
 // Add event listeners to the checkboxes
 insuranceCheckbox.addEventListener("change", updateContent);

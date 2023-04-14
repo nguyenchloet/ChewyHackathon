@@ -2,6 +2,7 @@
 
 <html lang="en">
   <head>
+    <script type = "text/javascript" src="radius.js"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -10,23 +11,15 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Chewy">
     <link rel="stylesheet" href="style.css">
     <script type="module" src="./map.js"></script>
-    <!-- <script type="text/javascript" src="./zip.js"></script> -->
-    <script src="./popup.js"></script>
+    <script type="text/javascript" src="./zip.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
-
   </head>
     
     <body>
         <header>
-          <div>
-            <h1>☰</h1>
-            <img src = "chewy.svg.jpg" alt ="Chewy" height="80"/>
-          </div>
-            <h1 id="main-h1">Vet Finder</h1>
+            <img src = "chewy.svg.jpg" alt = "Chewy" height="80"/>
+            <h1>Vet Finder</h1>
         </header>
-        <div id="fieldsets">
-          <div id="fieldstyle">
             <fieldset>
                 <legend>Filters:</legend>
                     <div>
@@ -46,25 +39,8 @@
                         <label for="emergency">Emergency Services</label>
                     </div>
             </fieldset>
-   
             <fieldset>
                 <legend>Categories:</legend>
-                <div>
-                  <input type="checkbox" id="canine">
-                  <label for="canine">Canine and Feline</label>
-                </div>
-                <div>
-                  <input type="checkbox" id="reptile">
-                  <label for="reptile">Reptile and Amphibian</label>
-                </div>
-                <div>
-                  <input type="checkbox" id="avian">
-                  <label for="avian">Avian</label>
-                </div>
-                <div>
-                  <input type="checkbox" id="exotic">
-                  <label for="exotic">Exotic</label>
-                </div>
                 <div>
                     <input type="checkbox" id="beefcattle">
                     <label for="beefcattle">Beef Cattle</label>
@@ -78,12 +54,28 @@
                     <label for="dairy">Dairy</label>
                 </div>
                 <div>
+                    <input type="checkbox" id="avian">
+                    <label for="avian">Avian</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="exotic">
+                    <label for="exotic">Exotic</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="reptile">
+                    <label for="reptile">Reptile and Amphibian</label>
+                </div>
+                <div>
                     <input type="checkbox" id="equine">
                     <label for="equine">Equine</label>
                 </div>
                 <div>
                     <input type="checkbox" id="swine">
                     <label for="swine">Swine</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="canine">
+                    <label for="canine">Canine and Feline</label>
                 </div>
             </fieldset>
             <fieldset>
@@ -112,153 +104,64 @@
                     <input type="checkbox" id="radiology">
                     <label for="radiology">Radiology</label>
                 </div>
-              </div>
-        </fieldset>
-        <button id="submitFilters">Apply filters</button>
 
-       </div>
+        </fieldset>
+
         <div class="main">
+            <form>
+                <label for="zipcode-input"></label>
+                <input type="number" id="zipcode-input" name="zipcode-input" placeholder="Search By Zip Code">
+                <input type="button" value="Search" onclick="getZip()" />
+            </form>
+            <select name="miles" id="miles">
+                <option value="5 miles">5 miles</option>
+                <option value="10 miles">10 miles</option>
+                <option value="15 miles">15 miles</option>
+                <option value="20 miles">20 miles</option>
+            </select>
+
             <div class="map-output">
                 <div class="map-left">
-                    <form>
-                        <label for="zipcode-input"></label>
-                        <input type="number" id="zip-input" name="zipcode-input" placeholder="Search By Zip Code"> 
-                        <button type="button" id="zip-button">&#x1F50E</button>
-                        <button type="button" id="filter" value="Filter">Filter</button>
-                       <!-- <input type = "button" onclick="getRadius()" value = "Zipcode" /> -->
-                    </form>
-                    <div id="zip-bar">
-                      <select name="miles" id="miles">
-                        <option value="5 miles">5 miles</option>
-                        <option value="10 miles">10 miles</option>
-                        <option value="15 miles">15 miles</option>
-                        <option value="20 miles">20 miles</option>
-                      </select>
-                      <div id="zip-error">Enter a valid zip code</div>
-                    </div>
-                    <br><br>
-                    <div id="search-output">
-                         <div id="h2div">
-                          <h2 id="zip-received"></h2> 
-                          <h2>Search Results:</h2>
-                         </div>
-                      <ul> 
-                        <li>
-                          <div id="clinic-item">
-                            <h3 id="clinic1">Countryside Animal Hospital - Granby</h3>
-                            <p>&emsp; <em>0.2mi</em></p>
-                          </div>
-                          <div>164 W State ST, Granby MA, 01033-9606</div>
-                            <div>Phone: 4134671300</div>
-                          <div>Categories: Food Animals, Swine</div>
-                          <div id="clinic-subitem">
-                            <p>Insurance: <span>No</span></p>
-                            <p>Specialties: None</p>
-                          </div>
-                        </li>
-
-                        <li>
-                          <div id="clinic-item">
-                            <h3 id="clinic1">Agawam Animal Hospital</h3>
-                            <p>&emsp; <em>0.5mi</em></p>
-                          </div>
-                          <div>65 Mill ST, Agawam MA, 01001-2393</div>
-                            <div>Phone: 4137864440</div>
-                          <div>Categories: None</div>
-                          <div id="clinic-subitem">
-                            <p>Insurance: <span>Yes</span></p>
-                            <p>Specialties: Nutrition, Oncology</p>
-                          </div>
-                        </li>
-
-                        <li>
-                          <div id="clinic-item">
-                            <h3 id="clinic1">Skipton Vet Clinic</h3>
-                            <p>&emsp; <em>0.9mi</em></p>
-                          </div>
-                          <div>70 SOUTHAMPTON ST, Boston MA, 02118-2711</div>
-                            <div>Phone: 6178770973</div>
-                          <div>Categories: Food Animals, Swine</div>
-                          <div id="clinic-subitem">
-                            <p>Insurance: <span>No</span></p>
-                            <p>Specialties: Cardiology, Neurology</p>
-                          </div>
-                        </li>
-
-                        <li>
-                          <div id="clinic-item">
-                            <h3 id="clinic1">West Street Veterinary Clinic</h3>
-                            <p>&emsp; <em>1.0mi</em></p>
-                          </div>
-                          <div>45 WEST ST, Medfield MA, 02052-1511</div>
-                            <div>Phone: 7744693979</div>
-                          <div>Categories: Exotic</div>
-                          <div id="clinic-subitem">
-                            <p>Insurance: <span>Yes</span></p>
-                            <p>Specialties: None</p>
-                          </div>
-                        </li>
-
-                        <li>
-                          <div id="clinic-item">
-                            <h3 id="clinic1">Home Veterinary Services - South Dartmouth</h3>
-                            <p>&emsp; <em>2.0mi</em></p>
-                          </div>
-                          <div>7 STAR OF THE SEA DR, South Dartmouth MA, 02748-1273</div>
-                            <div>Phone: 5085255797</div>
-                          <div>Categories: Avian, Equine</div>
-                          <div id="clinic-subitem">
-                            <p>Insurance: <span>Yes</span></p>
-                            <p>Specialties: Nutrition</p>
-                          </div>
-                        </li>
-
-                        <li>
-                          <div id="clinic-item">
-                            <h3 id="clinic1">ANDOVER ANIMAL HOSPITAL-MA</h3>
-                            <p>&emsp; <em>2.5mi</em></p>
-                          </div>
-                          <div>233 LOWELL ST, Andover MA, 01810-3426</div>
-                            <div>Phone: 9784753600</div>
-                          <div>Categories: Avian, Exotic</div>
-                          <div id="clinic-subitem">
-                            <p>Insurance: <span>No</span></p>
-                            <p>Specialties: None</p>
-                          </div>
-                        </li>
-                      </ul>
-                    </div>
-                        
-                </div>
-
-                <div class="map-right">
-                    <!--<h2>Map</h2> -->
+                    <h2>Map</h2>
                     <!-- map image output -->
                     <div id="map"></div>
                     <script>
-                        (g=>{var h,a,k,p="The Google Maps JavaScript API",c="google",l="importLibrary",q="__ib__",m=document,b=window;b=b[c]||(b[c]={});var d=b.maps||(b.maps={}),r=new Set,e=new URLSearchParams,u=()=>h||(h=new Promise(async(f,n)=>{await (a=m.createElement("script"));e.set("libraries",[...r]+"");for(k in g)e.set(k.replace(/[A-Z]/g,t=>"_"+t[0].toLowerCase()),g[k]);e.set("callback",c+".maps."+q);a.src=`https://maps.${c}apis.com/maps/api/js?`+e;d[q]=f;a.onerror=()=>h=n(Error(p+" could not load."));a.nonce=m.querySelector("script[nonce]")?.nonce||"";m.head.append(a)}));d[l]?console.warn(p+" only loads once. Ignoring:",g):d[l]=(f,...n)=>r.add(f)&&u().then(()=>d[l](f,...n))})({
-                            key: "AIzaSyDHPdBFZbbncRdHvz8LbFYiLck_Cx2ikP4",
-                            // Add other bootstrap parameters as needed, using camel case.
-                            // Use the 'v' parameter to indicate the version to load (alpha, beta, weekly, etc.)
-                        });
+                      (g=>{var h,a,k,p="The Google Maps JavaScript API",c="google",l="importLibrary",q="__ib__",m=document,b=window;b=b[c]||(b[c]={});var d=b.maps||(b.maps={}),r=new Set,e=new URLSearchParams,u=()=>h||(h=new Promise(async(f,n)=>{await (a=m.createElement("script"));e.set("libraries",[...r]+"");for(k in g)e.set(k.replace(/[A-Z]/g,t=>"_"+t[0].toLowerCase()),g[k]);e.set("callback",c+".maps."+q);a.src=`https://maps.${c}apis.com/maps/api/js?`+e;d[q]=f;a.onerror=()=>h=n(Error(p+" could not load."));a.nonce=m.querySelector("script[nonce]")?.nonce||"";m.head.append(a)}));d[l]?console.warn(p+" only loads once. Ignoring:",g):d[l]=(f,...n)=>r.add(f)&&u().then(()=>d[l](f,...n))})({
+                        key: "AIzaSyDHPdBFZbbncRdHvz8LbFYiLck_Cx2ikP4",
+                        // Add other bootstrap parameters as needed, using camel case.
+                        // Use the 'v' parameter to indicate the version to load (alpha, beta, weekly, etc.)
+                      });
                     </script>
                 </div>
-
-                
-         
+                <div class="map-right"> 
+                  <div>Search Results: <p id="zip-received"></p> </div>
+                      <ol> 
+                        <li>
+                          <h3 id="clinic1"></h3>
+                        </li>
+                      </ol>
                 </div>
+
+                </div>
+                <p id ="clinic-info"></p>
+                <script type = "text/javascript">
+                fetch('./data.json')
+                .then(function(response) {
+                    return response.json();
+                })
+                .then(function(clinic-info) {
+                    for(var i =0; i<clinic-info.length; i++){
+                        document.getElementById("clinic-info").innerHTML +=i
+                        clinic-info[i].id + => data[i].clinic_name +
+                    }
+
+                })
+    
+                </script>
+
             </div>
         </div>
     </body>
-    <footer>
-      <div id="foot">
-        <div>Our experts are available 24/7:</div>
-        <div>1-800-672-4399</div>
-        <div>chat now</div>
-        <div>message us</div>
-        <button>back to top</button>
-      </div>
-    </footer>
 </html>
 
 <!--   -->
